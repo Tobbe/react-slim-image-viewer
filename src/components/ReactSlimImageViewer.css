@@ -38,6 +38,8 @@
 
 .react-slim-image-viewer__close {
   color: white;
+  background: none;
+  border: none;
   position: absolute;
   top: 15px;
   right: 15px;
@@ -54,6 +56,8 @@
 .react-slim-image-viewer__navigation {
   height: 80%;
   color: white;
+  background: none;
+  border: none;
   cursor: pointer;
   position: absolute;
   font-size: 60px;

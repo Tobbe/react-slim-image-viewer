@@ -86,32 +86,32 @@ export const ReactSlimImageViewer: React.FC<Props> = ({
       className={`${baseClassName}__wrapper`}
       style={styles?.wrapper}
     >
-      <span
+      <button
         onClick={onClose}
         className={`${baseClassName}__close`}
         style={styles?.close}
       >
         &times;
-      </span>
+      </button>
 
       {src.length > 1 && (
-        <span
+        <button
           onClick={() => changeImage("prev")}
           className={`${baseClassName}__navigation ${baseClassName}__prev`}
           style={styles?.prev}
         >
           &#10094;
-        </span>
+        </button>
       )}
 
       {src.length > 1 && (
-        <span
+        <button
           onClick={() => changeImage("next")}
           className={`${baseClassName}__navigation ${baseClassName}__next`}
           style={styles?.next}
         >
           &#10095;
-        </span>
+        </button>
       )}
 
       <div

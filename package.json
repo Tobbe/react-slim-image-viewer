@@ -45,8 +45,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "copycss": "cp src/components/*.css ./lib/",
     "copypkgfiles": "cp README.md ./lib/ && cp package.json ./lib/",
-    "build:lib": "tsc -p tsconfig_lib.json",
+    "build:lib": "tsc -p tsconfig_lib.json && npm run copycss",
     "release:patch": "npm run build:lib && npm version patch && npm run copypkgfiles && cd lib && npm publish",
     "release:minor": "npm run build:lib && npm version minor && npm run copypkgfiles && cd lib && npm publish",
     "release:major": "npm run build:lib && npm version major && npm run copypkgfiles && cd lib && npm publish"

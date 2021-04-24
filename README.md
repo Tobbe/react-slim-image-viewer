@@ -33,13 +33,13 @@ yarn add react-slim-image-viewer
 
 ## API
 
-| Property      | Type     | Description                                                                      |
-| :------------ | :------- | :------------------------------------------------------------------------------- |
-| src           | string[] | Array of image URLs                                                              |
-| currentIndex  | number   | Index of image in `src` property which will be shown first when viewer is opened |
-| onClose       | function | Callback which will be called when viewer will closed                            |
-| styles        | object   | Custom styles for all html elements of the modal window                          |
-| baseClassName | string   | Change the base part of the css class name. This will disable built-in styles    |
+| Property      | Type       | Description                                                                      |
+| :------------ | :--------- | :------------------------------------------------------------------------------- |
+| src           | string[]   | Array of image URLs                                                              |
+| currentIndex  | number     | Index of image in `src` property which will be shown first when viewer is opened |
+| onClose       | function   | Callback which will be called when viewer will closed                            |
+| styles        | RsivStyles | Custom styles for all html elements of the modal window                          |
+| baseClassName | string     | Change the base part of the css class name. This will disable built-in styles    |
 
 ## Shortcuts
 

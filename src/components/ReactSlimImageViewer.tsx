@@ -1,7 +1,7 @@
 import { useState, useEffect, CSSProperties, useCallback } from "react";
 import "./ReactSlimImageViewer.css";
 
-export interface Styles {
+export interface RsivStyles {
   wrapper: CSSProperties;
   content: CSSProperties;
   slide: CSSProperties;
@@ -16,7 +16,7 @@ interface Props {
   src: string[];
   onClose: () => void;
   currentIndex?: number;
-  styles?: Partial<Styles>;
+  styles?: Partial<RsivStyles>;
   baseClassName?: string;
 }
 

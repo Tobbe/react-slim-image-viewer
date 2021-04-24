@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# React Slim Image Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
 
-## Available Scripts
+```bash
+npm install react-slim-image-viewer
+```
 
-In the project directory, you can run:
+or
 
-### `npm start`
+```bash
+yarn add react-slim-image-viewer
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+| Property      |  Type    | Description                                                                      |
+| :------------ | :------- | :------------------------------------------------------------------------------- |
+| src           | string[] | Array of image URLs                                                              |
+| currentIndex  | number   | Index of image in `src` property which will be shown first when viewer is opened |
+| onClose       | function | Callback which will be called when viewer will closed                            |
+| styles        | object   | Custom styles for all html elements of the modal window                          |
+| baseClassName | string   | Change the base part of the css class name. This will disable built-in styles    |
 
-### `npm test`
+## Shortcuts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Shortcut        | Description                     |
+| :-------------- | :------------------------------ |
+| Escape          | Close the viewer                |
+| Right Arrow / l | Next image                      |
+| Left Arrow / h  | Previous image                  |
+| Mouse wheel     | Scrolling previous / next image |
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+PRs and issue reports are welcome!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Testing pre-release version
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1.  `npm run build`
+2.  Copy the built files to where you want to use them. Example (standing in a
+    project that you want to test the new version in):
+    `cp -r ../react-slim-image-viewer/lib/* node_modules/react-slim-image-viewer/`

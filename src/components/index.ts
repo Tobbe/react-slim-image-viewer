@@ -1,0 +1,1 @@
+export { ReactSlimImageViewer } from './ReactSlimImageViewer'

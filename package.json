@@ -1,8 +1,29 @@
 {
   "name": "react-slim-image-viewer",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
+  "description": "Slim image viewer for React",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tobbe/react-slim-image-viewer.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-component",
+    "image",
+    "images",
+    "image-viewer",
+    "viewer",
+    "lightbox",
+    "gallery",
+    "fullscreen"
+  ],
+  "author": "Tobbe Lundberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tobbe/react-slim-image-viewer/issues"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
@@ -16,11 +37,19 @@
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.1"
   },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "copypkgfiles": "cp README.md ./lib/ && cp package.json ./lib/",
+    "build:lib": "tsc -p tsconfig_lib.json",
+    "release:patch": "npm run build:lib && npm version patch && npm run copypkgfiles && cd lib && npm publish",
+    "release:minor": "npm run build:lib && npm version minor && npm run copypkgfiles && cd lib && npm publish",
+    "release:major": "npm run build:lib && npm version major && npm run copypkgfiles && cd lib && npm publish"
   },
   "eslintConfig": {
     "extends": [

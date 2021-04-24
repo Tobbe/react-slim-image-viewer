@@ -1,24 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { ReactSlimImageViewer } from "./components/ReactSlimImageViewer";
 
 function App() {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+  const images = [
+    "http://placeimg.com/1200/800/nature",
+    "http://placeimg.com/800/1200/nature",
+    "http://placeimg.com/1920/1080/nature",
+    "http://placeimg.com/1500/500/nature",
+  ];
+
+  const openImageViewer = (index: number) => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  };
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {images.map((src, index) => (
+        <img
+          src={src}
+          onClick={() => openImageViewer(index)}
+          width="300"
+          key={index}
+          style={{ margin: "2px" }}
+          alt=""
+        />
+      ))}
+
+      {isViewerOpen && (
+        <ReactSlimImageViewer
+          src={images}
+          currentIndex={currentImage}
+          onClose={closeImageViewer}
+        />
+      )}
     </div>
   );
 }
